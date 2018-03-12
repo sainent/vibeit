@@ -1,4 +1,4 @@
-# vibeit
+# Vibeit
 opencart checkout process
 
 Custome Checkout Process as per requirment.
