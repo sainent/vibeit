@@ -32,8 +32,13 @@
 </p>
 </div>
 <br/><br/>
+<div class="row">
+	<div class="col-sm-12">
 {% if text_agree %}
 <div class="buttons">
+  <div class="pull-left">
+	<a href="javascript:;" class="btn back" onclick="$('a[href=\'#shipping-info\']').trigger('click');"><i class="fa fa-long-arrow-left"></i> {{ text_return_shipping_info }}</a>
+  </div>
   <div class="pull-right">
 	<div class="hide">{{ text_agree }}
     {% if agree %}
@@ -44,9 +49,6 @@
     &nbsp;
 	</div>
     <input type="button" value="{{ text_complete_order }}" id="button-payment-method" onclick="payment_method_save();" data-loading-text="{{ text_loading }}" class="btn blue-button-vibeit" />
-  </div>
-  <div class="pull-left">
-	<a href="javascript:;" class="btn back" onclick="$('a[href=\'#shipping-info\']').trigger('click');"><i class="fa fa-long-arrow-left"></i> {{ text_return_shipping_info }}</a>
   </div>
 </div>
 {% else %}
@@ -59,3 +61,5 @@
   </div>
 </div>
 {% endif %}
+  </div>
+</div>
