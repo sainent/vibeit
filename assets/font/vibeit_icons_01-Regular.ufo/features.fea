@@ -1,0 +1,32 @@
+# Prefix: Languagesystems
+languagesystem DFLT dflt;
+
+feature liga {
+sub f a c by facebook;
+sub h e a by heart01;
+sub a m a by amazon;
+sub b e h by behance;
+sub d r i by dribble;
+sub d r o by dropbox;
+sub g o d by googledrive;
+sub g o p by googleplus;
+sub i n s by instagram;
+sub l i n by linkedin;
+sub l i k by like;
+sub m a i by mail;
+sub m a p by map;
+sub p h o by phone;
+sub p i n by pinterest;
+sub s k y by skype;
+sub t w i by twitter;
+sub c a r by cart;
+sub p r o by profile;
+sub s e t by settings;
+sub s h a by share;
+sub n a v by navicon;
+sub c l o by close;
+sub s e a by search;
+sub v i b by vibeit;
+sub i c o by icon;
+} liga;
+

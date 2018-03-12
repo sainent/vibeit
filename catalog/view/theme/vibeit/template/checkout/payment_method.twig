@@ -1,0 +1,61 @@
+<h2>{{ text_payment_section }}</h2>
+{% if error_warning %}
+<div class="alert alert-warning alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+{% endif %}
+{% if payment_methods %}
+<p>{{ text_payment_method }}</p>
+{% for payment_method in payment_methods %}
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="radio">
+			<label>
+			{% if payment_method.code == code or not code %}
+				{% set code = payment_method.code %}
+				<input type="radio" name="payment_method" value="{{ payment_method.code }}" checked="checked" />
+				{% else %}
+				<input type="radio" name="payment_method" value="{{ payment_method.code }}" />
+				{% endif %}
+				{{ payment_method.title }}
+				{% if payment_method.terms %}
+				({{ payment_method.terms }})
+			{% endif %}
+			</label>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endif %}
+<div class="hide">
+<p><strong>{{ text_comments }}</strong></p>
+<p>
+  <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
+</p>
+</div>
+<br/><br/>
+{% if text_agree %}
+<div class="buttons">
+  <div class="pull-right">
+	<div class="hide">{{ text_agree }}
+    {% if agree %}
+    <input type="checkbox" name="agree" value="1" checked="checked" />
+    {% else %}
+    <input type="checkbox" name="agree" value="1" checked="checked" />
+    {% endif %}
+    &nbsp;
+	</div>
+    <input type="button" value="{{ text_complete_order }}" id="button-payment-method" onclick="payment_method_save();" data-loading-text="{{ text_loading }}" class="btn blue-button-vibeit" />
+  </div>
+  <div class="pull-left">
+	<a href="javascript:;" class="btn back" onclick="$('a[href=\'#shipping-info\']').trigger('click');"><i class="fa fa-long-arrow-left"></i> {{ text_return_shipping_info }}</a>
+  </div>
+</div>
+{% else %}
+<div class="buttons">
+  <div class="pull-left">
+	<a href="javascript:;" class="btn back" onclick="$('a[href=\'#shipping-info\']').trigger('click');"><i class="fa fa-long-arrow-left"></i> {{ text_return_shipping_info }}</a>
+  </div>	
+  <div class="pull-right">
+    <input type="button" value="{{ text_complete_order }}" onclick="payment_method_save();" id="button-payment-method" data-loading-text="{{ text_loading }}" class="btn blue-button-vibeit" />
+  </div>
+</div>
+{% endif %}

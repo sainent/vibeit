@@ -1,0 +1,53 @@
+<div id="shipping-method">
+	<h2>{{ text_shipping_method_info }}</h2>
+	{% if error_warning %}
+	<div class="alert alert-warning alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}</div>
+	{% endif %}
+	{% if shipping_methods %}
+	<p>{{ text_shipping_method }}</p>
+	<div class="row">
+	{% for shipping_method in shipping_methods %}
+	<div class="col-sm-6">
+	<div class="panel panel-default">
+		<div class="panel-body">
+		<p><strong>{{ shipping_method.title }}</strong></p>
+		{% if not shipping_method.error %}
+		{% for quote in shipping_method.quote %}
+		<div class="radio">
+		  <label> {% if quote.code == code or not code %}
+			{% set code = quote.code %}
+			<input type="radio" name="shipping_method" value="{{ quote.code }}" checked="checked" />
+			{% else %}
+			<input type="radio" name="shipping_method" value="{{ quote.code }}" />
+			{% endif %}
+			{{ quote.title }} - {{ quote.text }}</label>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="alert alert-danger alert-dismissible">{{ shipping_method.error }}</div>
+		{% endif %}
+		</div>
+	</div>
+	</div>
+	{% endfor %}
+	{% endif %}
+	</div>
+	<div class="hide">
+	<p><strong>{{ text_comments }}</strong></p>
+	<p>
+	  <textarea name="comment" rows="8" class="form-control">{{ comment }}</textarea>
+	</p>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="buttons">
+			  <div class="pull-left">
+				<a href="javascript:;" class="btn back" onclick="$('a[href=\'#cust-info\']').trigger('click');"><i class="fa fa-long-arrow-left"></i> {{ text_return_cust_info }}</a>
+			  </div>
+			  <div class="pull-right">
+				<input type="button" value="{{ text_continue_payment }}" id="button-shipping-method" onclick="shipping_method_save();" data-loading-text="{{ text_loading }}" class="btn blue-button-vibeit" />
+			  </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="full-width-container">
+  <div><img src="{{ base }}image/{{ theme_custom.theme_custom_banner }}" alt="" class="img-responsive" /></div>
+</div>
+{% if modules is not empty %}
+    <div id="common-home" class="container">
+      <div class="row">
+        <div id="content" class="col-sm-12">
+            {% for module in modules %}
+                {{ module }}
+            {% endfor %}
+        </div>
+       </div>
+    </div>
+{% endif %}

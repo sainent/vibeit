@@ -1,0 +1,50 @@
+2018-02-08 14:57:38 - PHP Warning:  mysqli::mysqli(): (HY000/1049): Unknown database 'localhost' in C:\wamp64\www\vibeit\system\library\db\mysqli.php on line 7
+2018-02-08 14:58:33 - PHP Notice:  Undefined index: theme_custom_status in C:\wamp64\www\vibeit\catalog\controller\common\header.php on line 104
+2018-02-08 15:03:47 - PHP Warning:  mysqli::mysqli(): (HY000/1049): Unknown database 'ybeitco_oc_1234' in C:\wamp64\www\vibeit\system\library\db\mysqli.php on line 7
+2018-03-01 9:49:56 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:02:00 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:02:29 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:03:16 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:03:19 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:03:26 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:03:30 - PHP Notice:  Undefined index: theme_custom_status in E:\xampp\htdocs\vibeit\catalog\controller\common\header.php on line 104
+2018-03-01 10:21:35 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519903295): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 11:59:18 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995558): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 11:59:46 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995586): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 11:59:47 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995587): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:00:06 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995606): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:01:02 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995661): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:01:15 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995675): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:01:30 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995690): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:01:38 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995698): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-02 12:01:53 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1519995713): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-03 15:18:26 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520093906): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-03 15:20:25 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520094025): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-03 15:38:24 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520095104): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 8:21:42 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520155302): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 8:24:34 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520155473): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 10:25:07 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520162707): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 10:48:50 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520164130): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 11:04:51 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520165091): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-04 12:51:42 - PHP Notice:  Undefined index: payment_methods in E:\xampp\htdocs\vibeit\catalog\controller\checkout\payment_method.php on line 164
+2018-03-04 13:49:40 - PHP Notice:  Undefined index: payment_methods in E:\xampp\htdocs\vibeit\catalog\controller\checkout\payment_method.php on line 164
+2018-03-04 14:17:56 - PHP Notice:  Undefined index: payment_methods in E:\xampp\htdocs\vibeit\catalog\controller\checkout\payment_method.php on line 160
+2018-03-06 6:35:02 - PHP Notice:  Undefined index: address_2 in E:\xampp\htdocs\vibeit\catalog\model\account\address.php on line 16
+2018-03-06 6:35:02 - PHP Notice:  Undefined index: zone_id in E:\xampp\htdocs\vibeit\catalog\model\account\address.php on line 16
+2018-03-09 6:48:20 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520581699): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-09 9:52:39 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520592759): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-09 13:15:46 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520604946): No such file or directory in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: firstname in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 109
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: lastname in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 113
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: address_1 in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 117
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: city in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 121
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: country_id in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 127
+2018-03-09 13:19:25 - PHP Notice:  Undefined index: country_id in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 133
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: firstname in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 109
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: lastname in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 113
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: address_1 in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 117
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: city in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 121
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: country_id in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 127
+2018-03-09 13:21:14 - PHP Notice:  Undefined index: country_id in E:\xampp\htdocs\vibeit\catalog\controller\checkout\guest_shipping.php on line 133
+2018-03-09 13:28:16 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520605696): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65
+2018-03-09 14:17:14 - PHP Warning:  unlink(E:/xampp/htdocs/vibeit/system/storage/cache/cache.catalog.language.1520608634): Permission denied in E:\xampp\htdocs\vibeit\system\library\cache\file.php on line 65

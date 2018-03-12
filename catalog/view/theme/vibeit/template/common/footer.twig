@@ -1,0 +1,63 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      {% if informations %}
+      <div class="col-sm-3 text-xs-center text-md-left">
+        <h5 data-toggle="collapse" data-target="#about-us">{{ text_about }}</h5>
+        <ul id="about-us" class="collapse list-unstyled open-info-footer">
+          <li><a href="{{ information }}">{{ text_aboutus }}</a></li>
+          <li><a href="{{ return }}">{{ text_location }}</a></li>
+          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+        </ul>
+      </div>
+      {% endif %}
+      <div class="col-sm-3 text-xs-center text-md-left">
+        <h5 data-toggle="collapse" data-target="#information">{{ text_information }}</h5>
+        <ul id="information" class="collapse list-unstyled open-info-footer">
+          <li><a href="{{ contact }}">{{ text_faq }}</a></li>
+          <li><a href="{{ return }}">{{ text_privacy }}</a></li>
+          <li><a href="{{ sitemap }}">{{ text_terms }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 text-xs-center text-md-left">
+        <h5 data-toggle="collapse" data-target="#shop">{{ text_shop }}</h5>
+        <ul id="shop" class="collapse list-unstyled open-info-footer">
+          {% if logged %}
+          <li><a href="{{ account }}">{{ text_profile }}</a></li>
+          {% else %}
+          <li><a href="#" onclick="$('#log-in-modal').modal()">{{ text_profile }}</a></li>
+          {% endif %}
+          <li><a href="">{{ text_returns }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 text-xs-center text-md-left">
+        <h5 data-toggle="collapse" data-target="#social-media">{{ text_connect }}</h5>
+        <ul id="social-media" class="collapse list-unstyled open-info-footer">
+          <li><a href="#">{{ facebook }}</a></li>
+          <li><a href="#">{{ instagram }}</a></li>
+          <li><a href="#">{{ twitter }}</a></a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-4 text-center">
+        <img src="image/vibeit_400.svg" alt="Logo" class="vibeit-logo">
+      </div>
+      <div class="col-sm-4">
+        <p class="text-center">{{ text_powered }}</p>
+      </div>
+      <div class="col-sm-4 text-center">
+        <a href="https://vibeit.co/"class="btn btn-contact-us blue-button-vibeit">{{ contact_us }}</a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>

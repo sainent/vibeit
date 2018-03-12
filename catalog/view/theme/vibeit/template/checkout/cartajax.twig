@@ -1,0 +1,119 @@
+<div id="checkout-cartajax-loading" style="display:none;">
+	<br/><p class="text-center"><i class="fa fa-circle-o-notch fa-spin fa-5x"></i></p><h1 class="text-center">Loading....</h1>
+</div>
+<div id="checkout-cartajax">
+  {% if attention %}
+  <div class="alert alert-info"><i class="fa fa-info-circle"></i> {{ attention }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if success %}
+  <div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> {{ success }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+  {% if error_warning %}
+  <div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> {{ error_warning }}
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  {% endif %}
+	<div class="table-responsive">
+		<table class="title">
+			<tbody>
+				<tr><td class="main-title"><h2>{{ heading_title }}</h2></td></tr>
+				<tr><td class="title-item-number">{{ text_items }} - {% if weight %}{{ weight }}{% endif %}</td></tr>
+			</tbody>
+		</table>
+	  <table class="product-table">
+		<tbody>
+		{% for product in products %}
+		<tr>
+		  <td rowspan="2" class="product-image">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}</td>
+		  <td class="product-name"><a href="{{ product.href }}">{{ product.name }}</a> {% if not product.stock %} <span class="text-danger">***</span> {% endif %}
+			{% if product.option %}
+			{% for option in product.option %} <br />
+			<small>{{ option.name }}: {{ option.value }}</small> {% endfor %}
+			{% endif %}
+			{% if product.reward %} <br />
+			<small>{{ product.reward }}</small> {% endif %}
+			{% if product.recurring %} <br />
+			<span class="label label-info">{{ text_recurring_item }}</span> <small>{{ product.recurring }}</small> {% endif %}</td>
+		</tr>
+		<tr>
+		  <td class="product-price-style">
+			<div class="pull-left product-price">{{ product.total }}</div>
+			<div class="pull-right count-input space-bottom">
+				<div class="input-group" style="width:100px;">
+					<div class="input-group-btn">
+						<a class="btn" data-action="decrease" href="javascript:;" onclick="cartajaxadd('{{ product.product_id }}', '-1');">–</a>
+					</div>
+					<input class="quantity form-control" type="text" name="quantity" value="{{ product.quantity }}" readonly/>
+					<div class="input-group-btn">
+						<a class="btn" data-action="increase" href="javascript:;" onclick="cartajaxadd('{{ product.product_id }}', '1');">&plus;</a>
+					</div>
+				</div>
+			</div>
+		  </td>
+		</tr>
+		{% endfor %}
+		{% for voucher in vouchers %}
+		<tr>
+		  <td class="text-left">{{ voucher.description }}</td>
+		  <td class="text-right">{{ voucher.amount }}</td>
+		</tr>
+		<tr>	
+			<td class="text-right"><div class="input-group btn-block" style="max-width: 200px;">
+			  <input type="text" name="" value="1" size="1" disabled="disabled" class="form-control" />
+			  <div class="input-group-btn">
+			  <button type="button" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger" onclick="voucher.remove('{{ voucher.key }}');"><i class="fa fa-times-circle"></i></button>
+			  </div></div>
+			</td>
+		</tr>
+		{% endfor %}
+		  </tbody>
+	  </table>
+	</div>
+	{% if modules %}
+	<div class="panel-group" id="accordion"> 
+		{% for module in modules %}
+			{{ module }}
+		{% endfor %} 
+	</div>
+	{% endif %} <br />
+	<div class="table-responsive">
+		<table id="checkout-cart-total" class="table">
+		{% for total in totals %}
+		<tr>
+		  <td class="text-left">{{ total.title }}</td>
+		  <td class="text-right"><strong>{{ total.text }}</strong></td>
+		</tr>
+		{% endfor %}
+		</table>
+	</div>
+</div>
+<script type="text/javascript"><!--
+function cartajaxadd(product_id, quantity) {
+	$.ajax({
+		url: 'index.php?route=checkout/cartajax/add',
+		type: 'post',
+		data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+		dataType: 'json',
+		beforeSend: function() {
+			$('#checkout-order-details').html('<br/><p class="text-center"><i class="fa fa-circle-o-notch fa-spin fa-5x"></i></p><h1 class="text-center">Loading....</h1>');
+		},
+		success: function(json) {
+			$('.alert-dismissible, .text-danger').remove();
+			if (json['redirect']) {
+				location = json['redirect'];
+			}
+			if (json['success']) {
+				cartajax();
+			}
+		},
+		error: function(xhr, ajaxOptions, thrownError) {
+			alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		}
+	});
+}
+
+//--></script>

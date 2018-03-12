@@ -1,0 +1,74 @@
+<div id="cart" class="btn-group">
+  <button id="open-cart" type="button" data-toggle="dropdown" data-loading-text="{{ text_loading }}" class="btn btn-inverse btn-lg dropdown-toggle">
+    <i class="vi vi-cart"></i>
+    <span id="cart-total" class="cart-total {% if products is empty %}cart-empty{% endif %}">{{ text_count }}</span>
+    <span class="close-cart"><i class="vi vi-close"></i></span>
+  </button>
+  <ul class="dropdown-menu pull-right">
+    {% if products or vouchers %}
+    <li>
+      <table class="title">
+        <tbody>
+          <tr>
+            <td class="main-title"><h2>{{ heading_title }}</h2></td>
+          </tr>
+          <tr>
+            <td class="title-item-number">{{ text_items }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </li>
+    <li>
+      <table class="table products">
+        {% for product in products %}
+        <tr>
+          <td rowspan="2" class="product-image">{% if product.thumb %} <a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-thumbnail" /></a> {% endif %}</td>
+          <td class="product-name"><a href="{{ product.href }}">{{ product.name }}</a> {% if product.option %}
+            {% for option in product.option %} <br />
+            - <small>{{ option.name }} {{ option.value }}</small> {% endfor %}
+            {% endif %}
+            {% if product.recurring %} <br />
+            - <small>{{ text_recurring }} {{ product.recurring }}</small> {% endif %}</td>
+        </tr>
+        <tr>
+          <td class="product-price-style">
+            <div class="product-price">{{ product.total }}</div>
+            <div class="count-input space-bottom">
+              <a class="incr-btn" data-action="decrease" href="#" onclick="cart.add('{{ product.product_id }}', '-1');">–</a>
+              <input class="quantity" type="text" name="quantity" value="{{ product.quantity }}" readonly/>
+              <a class="incr-btn" data-action="increase" href="#" onclick="cart.add('{{ product.product_id }}', '1');">&plus;</a>
+            </div>
+          </td>
+        </tr>
+        {% endfor %}
+        {% for voucher in vouchers %}
+        <tr>
+          <td class="text-center"></td>
+          <td class="text-left">{{ voucher.description }}</td>
+          <td class="text-right">x&nbsp;1</td>
+          <td class="text-right">{{ voucher.amount }}</td>
+          <td class="text-center text-danger"><button type="button" onclick="voucher.remove('{{ voucher.key }}');" title="{{ button_remove }}" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </li>
+    <li>
+      <table class="table price-list">
+        {% for total in totals %}
+        <tr>
+          <td class="total">{{ total.title }}</td>
+          <td class="total-price text-right"><strong>{{ total.text }}</strong></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <div class="text-center">
+        <a class="btn btn-continue-to-checkout blue-button-vibeit text-center" href="{{ checkout }}">{{ text_checkout }}</a>
+      </div>
+    </li>
+    {% else %}
+    <li>
+      <p class="text-center">{{ text_empty }}</p>
+    </li>
+    {% endif %}
+  </ul>
+</div>
